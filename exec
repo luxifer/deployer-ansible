@@ -1,5 +1,5 @@
 #!/bin/bash
 
-git clone --depth 1 --branch $DEPLOYER_REF $DEPLOYER_REPO /app
+git clone --quiet --depth 1 --branch $DEPLOYER_REF $DEPLOYER_REPO /app
 cd /app
 sh ./deployer
