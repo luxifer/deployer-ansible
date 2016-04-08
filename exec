@@ -3,4 +3,4 @@
 set -ex
 git clone --quiet --depth 1 --branch $DEPLOYER_REF $DEPLOYER_REPO /app
 cd /app
-sh ./deployer
+source ./deployer
