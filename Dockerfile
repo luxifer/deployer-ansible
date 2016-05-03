@@ -6,10 +6,13 @@ RUN apt-get -y update && apt-get -y install git \
                 python-dev \
                 python-pip \
                 python-paramiko \
-                python-yaml \
                 python-jinja2 \
                 python-httplib2 \
                 python-six \
+                build-essential \
+                libffi-dev \
+                libssl-dev \
+                libyaml-dev \
         --no-install-recommends && rm -r /var/lib/apt/lists/*
 
 ENV ANSIBLE_VERSION 2.0.2.0

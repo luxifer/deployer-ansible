@@ -4,4 +4,5 @@ set -ex
 git clone --quiet --depth 50 --branch $DEPLOYER_REF $DEPLOYER_REPO /app
 cd /app
 git reset --hard -q $DEPLOYER_SHA
+ansible --version
 source ./deployer
