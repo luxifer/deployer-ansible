@@ -12,7 +12,8 @@ RUN apt-get -y update && apt-get -y install git \
                 python-six \
         --no-install-recommends && rm -r /var/lib/apt/lists/*
 
-RUN pip install ansible
+ENV ANSIBLE_VERSION 2.0.2.0
+RUN pip install -I ansible==$ANSIBLE_VERSION
 
 ADD ./exec /bin/exec
 ADD ./config /root/.ssh/config
