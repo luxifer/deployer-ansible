@@ -15,7 +15,7 @@ RUN apt-get -y update && apt-get -y install git \
                 libyaml-dev \
         --no-install-recommends && rm -r /var/lib/apt/lists/*
 
-ENV ANSIBLE_VERSION 2.1.0.0
+ENV ANSIBLE_VERSION 2.1.1.0
 RUN pip install -I ansible==$ANSIBLE_VERSION
 
 ADD ./exec /bin/exec
