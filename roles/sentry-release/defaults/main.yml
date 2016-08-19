@@ -1,5 +1,10 @@
 ---
-sentry_releases_path: "/api/0/projects/{{ sentry_org }}/{{ sentry_project }}/releases/"
-body:
+sentry_create_release_path: "/api/0/projects/{{ sentry_org }}/{{ sentry_project }}/releases/"
+sentry_update_release_path: "/api/0/projects/{{ sentry_org }}/{{ sentry_project }}/releases/{{ sentry_version }}"
+body_create:
   version: "{{ sentry_version }}"
   ref: "{{ sentry_ref|default(sentry_version) }}"
+  url: "{{ sentry_release_url }}"
+body_update:
+  ref: "{{ sentry_ref|default(sentry_version) }}"
+  url: "{{ sentry_release_url }}"

@@ -1,11 +1,24 @@
 ---
 - name: Create a release on Sentry
   uri: >
-    url="{{ sentry_hostname }}{{ sentry_releases_path }}"
+    url="{{ sentry_hostname }}{{ sentry_create_release_path }}"
     method=POST
     force_basic_auth=yes
     user="{{ sentry_api_key }}"
     password=""
     body_format=json
-    body="{{ body }}"
-    status_code=201
+    body="{{ body_create }}"
+    status_code=201,400
+  register: release
+
+- name: Update a release on Sentry
+  uri: >
+    url="{{ sentry_hostname }}{{ sentry_update_release_path }}"
+    method=PUT
+    force_basic_auth=yes
+    user="{{ sentry_api_key }}"
+    password=""
+    body_format=json
+    body="{{ body_update }}"
+    status_code=200
+  when: release.status == 400
