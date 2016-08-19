@@ -9,6 +9,7 @@ Ansible role to create a version on a sentry project.
 * `sentry_org`
 * `sentry_project`
 * `sentry_version`
+* `sentry_release_url`
 
 ## Optionnals
 
