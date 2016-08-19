@@ -1,0 +1,11 @@
+---
+- name: Create a release on Sentry
+  uri: >
+    url="{{ sentry_hostname }}{{ sentry_releases_path }}"
+    method=POST
+    force_basic_auth=yes
+    user="{{ sentry_api_key }}"
+    password=""
+    body_format=json
+    body="{{ body }}"
+    status_code=201

@@ -1,0 +1,5 @@
+---
+sentry_releases_path: "/api/0/projects/{{ sentry_org }}/{{ sentry_project }}/releases/"
+body:
+  version: "{{ sentry_version }}"
+  ref: "{{ sentry_ref|default(sentry_version) }}"

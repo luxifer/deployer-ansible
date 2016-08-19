@@ -21,6 +21,7 @@ RUN pip install -I ansible==$ANSIBLE_VERSION
 ADD ./exec /bin/exec
 ADD ./config /root/.ssh/config
 ADD ./ansible.cfg /etc/ansible/ansible.cfg
+ADD ./roles /etc/ansible/roles
 
 ENV LANG C.UTF-8
 ENV LANGUAGE C.UTF-8
