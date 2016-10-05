@@ -15,8 +15,8 @@ RUN apt-get -y update && apt-get -y install git \
                 libyaml-dev \
         --no-install-recommends && rm -r /var/lib/apt/lists/*
 
-ENV ANSIBLE_VERSION 2.1.2.0
-RUN pip install -I ansible==$ANSIBLE_VERSION
+ENV ANSIBLE_VERSION v2.2.0.0-0.1.rc1
+RUN pip install -e git+https://github.com/ansible/ansible.git@$ANSIBLE_VERSION#egg=ansible
 
 ADD ./exec /bin/exec
 ADD ./config /root/.ssh/config
