@@ -8,7 +8,7 @@
     password=""
     body_format=json
     body="{{ body_create }}"
-    status_code=201,400
+    status_code=201,208,400
   register: release
 
 - name: Update a release on Sentry
