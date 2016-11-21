@@ -21,4 +21,4 @@
     body_format=json
     body="{{ body_update }}"
     status_code=200
-  when: release.status == 400
+  when: release.status in (208, 400)
