@@ -18,6 +18,8 @@ RUN apt-get -y update && apt-get -y install git \
 ENV ANSIBLE_VERSION 2.2.0.0
 RUN pip install -U pip
 RUN pip install ansible==$ANSIBLE_VERSION
+ADD ./requirements.txt .
+RUN pip install -r requirements.txt
 
 ADD ./exec /bin/exec
 ADD ./config /root/.ssh/config
